@@ -1,5 +1,5 @@
 # Science and Technology in Chile: State funding in 2022
- Data analysis and visualization for Science and Technology funding awarded by the Chilean State in 2022.
+Data analysis and visualization of Science and Technology projects that were given funding by the Chilean State in 2022
 @Claudio-AhumadaL, 2023
 
  ## General Information
