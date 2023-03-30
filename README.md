@@ -50,6 +50,6 @@ A function will be defined to extract the minimum and maximum values of each cat
 
 Covariance and Correlation of the year and amounts will be calculated using NumPy's covariance and SciPy's Pearson R.
 
-For exploratory visualization, histograms will be created for each of the interesting categories. Each figure will be saved as .png file.
+For exploratory visualization, histograms and barplots will be created for each of the interesting categories. Each figure will be saved as .png file.
 
  ## Conclusions
