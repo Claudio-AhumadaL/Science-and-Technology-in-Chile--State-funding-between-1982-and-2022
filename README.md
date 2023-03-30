@@ -27,8 +27,27 @@ This project relies on data of the projects awarded through public support instr
 
    ### Analysis
 
-The data will be cleaned and inspected using the python libraries Pandas and NumPy. Statistical analysis will rely on the python library SciPy. Exploratory visualization will be performed using the python libraries MatplotLib and Seaborn. The final dashboard will be constructed using Tableau Public.
- 
+The data will be cleaned and inspected using the python library Pandas. Statistical analysis will rely on the python libraries NumPy and SciPy. Exploratory visualization will be performed using the python libraries MatplotLib and Seaborn. The final dashboard will be constructed using Tableau Public.
+
  ## Methods
+
+For the descriptive and exploratory analysis saved in the Jupyter Notebook the columns will be divided in two broad categories:
+
+1. Categorical
+2. Numerical
+
+The numerical category has just one column ('Monto' column, the amount granted by the state). The Categorical category is divided in three narrow categories:
+
+1. Categorical - State Agencies and Sub-Agencies ('Agencia' - Agency, 'Subdirección' - Sub-agency)
+2. Categorical - Funding Instruments ('Instrumento' - Instrument, 'Contests' - Concursos, 'Tipo de Fondo' - Type of Funding)
+3. Categorical - Awardees ('SectorEconomico' - Economic Sector, 'AreaConocimiento' - Area of Knowledge, 'TipoBeneficiario' - Type of Beneficiary)
+
+The rest of the columns will not be included on the analysis.
+
+To get a better insight of the amount granted for the Categorical categories, grouped tables will be prepared for each of the columns in the narrow categories with the average amount granted for each of them as values.
+
+A function will be defined to extract the minimum and maximum values of each category.
+
+Covariance and Correlation of the year and amounts will be calculated using NumPy's covariance and SciPy's Pearson R.
 
  ## Conclusions
