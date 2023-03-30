@@ -40,7 +40,7 @@ The numerical category has just one column ('Monto' column, the amount granted b
 
 1. Categorical - State Agencies and Sub-Agencies ('Agencia' - Agency, 'Subdirección' - Sub-agency)
 2. Categorical - Funding Instruments ('Instrumento' - Instrument, 'Contests' - Concursos, 'Tipo de Fondo' - Type of Funding)
-3. Categorical - Awardees ('SectorEconomico' - Economic Sector, 'AreaConocimiento' - Area of Knowledge, 'TipoBeneficiario' - Type of Beneficiary)
+3. Categorical - Awardees ('SectorEconomico' - Economic Sector, 'AreaConocimiento' - Area of Knowledge, 'TipoBeneficiario' - Type of Beneficiary, 'RegionEjecucion' - Region of Execution)
 
 The rest of the columns will not be included on the analysis.
 
@@ -49,5 +49,7 @@ To get a better insight of the amount granted for the Categorical categories, gr
 A function will be defined to extract the minimum and maximum values of each category.
 
 Covariance and Correlation of the year and amounts will be calculated using NumPy's covariance and SciPy's Pearson R.
+
+For exploratory visualization, histograms will be created for each of the interesting categories. Each figure will be saved as .png file.
 
  ## Conclusions
