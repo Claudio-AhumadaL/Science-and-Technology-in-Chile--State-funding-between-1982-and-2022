@@ -6,7 +6,7 @@ Data analysis and visualization of Science and Technology projects that were giv
 
  ## General Information
 
-The aim of this project is to run an analysis over the Science and Technology project funding awarded by the Chilean State between the years 1982 to 2022. I expect to run descriptive and exploratory analysis over the data, which was collected from the [OBSERVA](observa.minciencia.gob.cl) platform of the chilean Ministry of Science. I expect to condense my findings in a dashboard made using Tableau for proper visualization.
+The aim of this project is to run an analysis over the Science and Technology funding awarded by the Chilean State between the years 1982 to 2022. I expect to run descriptive and exploratory analysis over the data, which was collected from the [OBSERVA](observa.minciencia.gob.cl) platform of the chilean Ministry of Science. I expect to condense my findings in a dashboard made using Tableau for proper visualization.
 
  ## Scope
 
@@ -14,42 +14,55 @@ The aim of this project is to run an analysis over the Science and Technology pr
 
   ### Goals
 
-The main goal of this project is to get a clear overview of the direction that the chilean State's Ministry of Science has taken during the 40 year period available in the data (1982 to 2022). I expect to analyze categories such as Area of Knowledge, Type of Funding, Amounts and Region of origin of the awardee, as well as the relationship between these categories. This project will be considered succesful after performing descriptive and exploratory analysis over the data and then producing an interactive and informative dashboard to showcase the findings.
+The main goal of this project is to get a clear overview of the direction that the chilean State's Ministry of Science has taken during the 40 year period available in the data (1982 to 2022). I expect to analyze categories such as Area of Knowledge, Type of Funding, Amounts and Region of Execution of the projects, as well as the relationship between these categories. This project will be considered succesful after performing descriptive and exploratory analysis over the data and then producing an interactive and informative dashboard to showcase the findings.
 
-   ### Actions
+  ### Actions
 
-This project could provide insights to interested groups, such as consulting companies or think thanks, that are interested in getting to know how the chilean State has been assigning funding over the last 40 years for scientific and technological enterprises. It could also help the interested groups to evaluate if the funding has been aligned with the State's areas of interest (macroeconomically speaking), so they can counsel against or in favor of shifting the funding towards one or another area of interest. 
+This project could provide insights to interested groups, such as consulting companies or think thanks, that are interested in getting to know how the Chilean State has been assigning funding over the last 40 years for scientific and technological enterprises. It could also help the interested groups to evaluate if the funding has been aligned with the State's areas of interest (macroeconomically speaking), so they can counsel against or in favor of shifting the funding towards one or another area of interest. 
 
-   ### Data
+### Data
 
 This project relies on data of the projects awarded through public support instruments for science, technology, knowledge and innovation, executed by the State agencies ANID, CORFO and the CTCI Undersecretariat. This data was taken from the [OBSERVA](observa.minciencia.gob.cl) platform of the chilean Ministry of Science and covers the period between 1982 and 2022.
 
 
-   ### Analysis
+### Analysis
 
-The data will be cleaned and inspected using the python library Pandas. Statistical analysis will rely on the python libraries NumPy and SciPy. Exploratory visualization will be performed using the python libraries MatplotLib and Seaborn. The final dashboard will be constructed using Tableau Public.
+ ## Initial definitions
 
- ## Methods
+The data will be cleaned and inspected using the python library Pandas. Statistical analysis will rely on the python libraries NumPy and SciPy. Exploratory visualization will be performed using the python library MatplotLib. The final dashboard will be constructed using Tableau Public.
 
-For the descriptive and exploratory analysis saved in the Jupyter Notebook the columns will be divided in two broad categories:
+This dataframe (called sf_data) has 2 types of columns, namely:
 
 1. Categorical
 2. Numerical
 
-The numerical category has just one column ('Monto' column, the amount granted by the state). The Categorical category is divided in three narrow categories:
+Restricting to consider only the columns of interest, the numerical category has just one column ('Monto' column, the amount granted by the state). The Categorical category is divided in three narrow categories:
 
 1. Categorical - State Agencies and Sub-Agencies ('Agencia' - Agency, 'Subdirección' - Sub-agency)
 2. Categorical - Funding Instruments ('Instrumento' - Instrument, 'Contests' - Concursos, 'Tipo de Fondo' - Type of Funding)
 3. Categorical - Awardees ('SectorEconomico' - Economic Sector, 'AreaConocimiento' - Area of Knowledge, 'TipoBeneficiario' - Type of Beneficiary, 'RegionEjecucion' - Region of Execution)
 
-The rest of the columns will not be included on the analysis.
+The rest of the columns are not included in the analysis.
+
+ ## Descriptive analysis
+
+ The descriptive analysis is divided in three parts. In this list, they are further divided by the methods used in each one of them:
+
+ 1. Inspection
+    - General inspection using sf_data.head(), sf_data.dtypes, sf_data.describe(include='all')
+    - NaN values inspection using sf_data.isnull().sum()
+    - Inspection of value counts of Categorical columns using sf_data[column].value_counts()
+
+ 2. Modification
+    - Unify RegionEjecucion values that correspond to the same region using sf_data['RegionEjecucion'].replace()
+
+ 3. Descriptive analysis
+
 
 To get a better insight of the amount granted for the Categorical categories, grouped tables will be prepared for each of the columns in the narrow categories with the average amount granted for each of them as values.
 
-A function will be defined to extract the minimum and maximum values of each category.
+A summary table will be created to display the minimum and maximum vales for each of the categorical categories.
 
-Covariance and Correlation of the year and amounts will be calculated using NumPy's covariance and SciPy's Pearson R.
 
-For exploratory visualization, histograms and barplots will be created for each of the interesting categories. Each figure will be saved as .png file.
 
  ## Conclusions
