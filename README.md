@@ -36,7 +36,7 @@ This dataframe (called sf_data) has 2 types of columns, namely:
 1. Categorical
 2. Numerical
 
-Restricting to consider only the columns of interest, the numerical category has just one column ('Monto' column, the amount granted by the state). The Categorical category is divided in three narrow categories:
+Restricting to consider only the columns of interest, the numerical category has just two columns ('Monto' column, the amount granted by the state, and the 'Año' column, the year). The Categorical category is divided in three narrower categories:
 
 1. Categorical - State Agencies and Sub-Agencies ('Agencia' - Agency, 'Subdirección' - Sub-agency)
 2. Categorical - Funding Instruments ('Instrumento' - Instrument, 'Contests' - Concursos, 'Tipo de Fondo' - Type of Funding)
@@ -57,11 +57,31 @@ The rest of the columns are not included in the analysis.
     - Unify RegionEjecucion values that correspond to the same region using sf_data['RegionEjecucion'].replace()
 
  3. Descriptive analysis
+    - Bar Plot: Number of projects by State Agencies, Sub-agencies, Area of Knowledge, Economic Sector, Instrument, Region
+ 
+ ## Exploratory analysis
 
+ The exploratory analysis is divided in two parts:
 
-To get a better insight of the amount granted for the Categorical categories, grouped tables will be prepared for each of the columns in the narrow categories with the average amount granted for each of them as values.
+ 1. Visual exploratory analysis 
+    - 'Monto' vs 'Año' Scatter plot and 'Monto' vs 'code of project' for the top 20 highest earner projects.
 
-A summary table will be created to display the minimum and maximum vales for each of the categorical categories.
+ 2. Grouping-based exploratory analysis 
+    - Grouped tables for Agency, Subagency, Instrument, Type of contest, year of execution, Economic Sector, Area of Knowledge, Type of Beneficiary and region of execution using sf_data.groupby([category]).Monto.mean()
+    - Summarizing table with the max and min values for every category
+    - Value counts of the year of execution, Instrument, Region of Execution and Area of Knowledge of the top 20 highest earner projects.
+    - Grouped tables for Agency, Subagency, Instrument, Type of contest, year of execution, Area of Knowledge, Type of Beneficiary and region of execution using sf_data.groupby([category]).Monto.mean() over the top 20 highest earner projects
+    - Summarizing table with the max and min values for every category for the top 20 highest earner projects.
+    - Grouped tables for Agency, Subagency, Instrument, Type of contest, year of execution, Economic Sector, Area of Knowledge, Type of Beneficiary and region of execution using sf_data.groupby([category]).Monto.mean() over the last 5 years of the data (2017-2022)
+    - Summarizing table with the max and min values for every category over the last 5 years of the data (2017-2022).
+
+ ## Statistical analysis
+
+ For the statistical analysis, the first step was to evaluate the columns of interest for normality and homocedasticity. The performed test were:
+
+  1. Normality: Anderson-Darling test over 'Monto' and 'Year' column
+  2. Homocedasticity: Levene's test over 'SectorEconomico' and 'Monto', over 'AreaConocimiento' and 'Monto' and over 'Region' and 'Monto'.
+
 
 
 
