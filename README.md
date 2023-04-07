@@ -1,6 +1,6 @@
 # Science and Technology in Chile: State funding between 1982 and 2022
 
-Data analysis and visualization of Science and Technology projects that were given funding by the Chilean State in between 1982 and 2022.
+Data analysis and visualization of Science and Technology projects that were given funding by the Chilean State between 1982 and 2022.
 
 @Claudio-AhumadaL, 2023
 
@@ -26,7 +26,7 @@ Some questions I want to answer with this report are:
 
 This project could provide insights to interested groups, such as consulting companies or think thanks, that are interested in getting to know how the Chilean State has been assigning funding over the last 40 years for scientific and technological enterprises. It could also help the interested groups to evaluate if the funding has been aligned with the State's areas of interest (macroeconomically speaking), so they can counsel against or in favor of shifting the funding towards one or another area of interest. 
 
-### Data
+## Data
 
 This project relies on data of the projects awarded through public support instruments for science, technology, knowledge and innovation, executed by the State agencies ANID, CORFO and the CTCI Undersecretariat. This data was taken from the [OBSERVA](observa.minciencia.gob.cl) platform of the chilean Ministry of Science and covers the period between 1982 and 2022.
 
@@ -35,9 +35,9 @@ The data included 47818 projects with a total amount given of 3.849.542.375.552 
 It's important to note for the 'RegionEjecucion' column analysis that the regions of Arica y Parinacota and Los Ríos were created in 2007 while the Ñuble region was created in 2018, which can introduce bias in said analysis.
 
 
-### Analysis
+## Analysis
 
- ## Initial definitions
+  ### Initial definitions
 
 The data will be cleaned and inspected using the python library Pandas. Statistical analysis will rely on the python libraries NumPy and SciPy. Exploratory visualization will be performed using the python library MatplotLib. The final dashboard will be constructed using Tableau Public.
 
@@ -50,11 +50,13 @@ Restricting to consider only the columns of interest, the numerical category has
 
 1. Categorical - State Agencies and Sub-Agencies ('Agencia' - Agency, 'Subdirección' - Sub-agency)
 2. Categorical - Funding Instruments ('Instrumento' - Instrument, 'Contests' - Concursos, 'Tipo de Fondo' - Type of Funding)
-3. Categorical - Awardees ('SectorEconomico' - Economic Sector, 'AreaConocimiento' - Area of Knowledge, 'TipoBeneficiario' - Type of Beneficiary, 'RegionEjecucion' - Region of Execution)
+3. Categorical - Awardees ('SectorEconomico' - Economic Sector, 'AreaConocimiento' - Area of Knowledge, 'TipoBeneficiario' - Type of Beneficiary or Awardee, 'RegionEjecucion' - Region of Execution)
 
 The rest of the columns are not included in the analysis.
 
- ## Descriptive analysis
+Later on the analysis, the dataframe was filtered to only get values for the last 5 years ('Año' > 2017) and then to only get the high_earner_projects (sf_data.sort_values(by=['Monto'], ascending = False).head(20)). Further analysis was performed over both of these subsets.
+
+  ### Descriptive analysis
 
  The descriptive analysis is divided in three parts. In this list, they are further divided by the methods used in each one of them:
 
@@ -67,9 +69,10 @@ The rest of the columns are not included in the analysis.
     - Unify RegionEjecucion values that correspond to the same region using sf_data['RegionEjecucion'].replace()
 
  3. Descriptive analysis
-    - Bar Plot: Number of projects by State Agencies, Sub-agencies, Area of Knowledge, Economic Sector, Instrument, Region
+    - Bar Plot: Number of projects by State Agencies, Sub-agencies, Area of Knowledge, Economic Sector, Instrument, RegionEjecucion.
+    - Bar plot: Amount by code of project for Top 20 high-earner projects.
  
- ## Exploratory analysis
+  ### Exploratory analysis
 
  The exploratory analysis is divided in two parts:
 
@@ -86,7 +89,7 @@ The rest of the columns are not included in the analysis.
     - Grouped tables for Agency, Subagency, Instrument, Type of contest, year of execution, Economic Sector, Area of Knowledge, Type of Beneficiary and region of execution using sf_data.groupby([category]).Monto.mean() over the last 5 years of the data (2017-2022)
     - Summarizing table with the max and min values for every category over the last 5 years of the data (2017-2022).
 
- ## Statistical analysis
+   ### Statistical analysis
 
  For the statistical analysis, the first step was to evaluate the columns of interest for normality and homoscedasticity. The performed test were:
 
@@ -103,3 +106,27 @@ The rest of the columns are not included in the analysis.
 
 
  ## Results
+
+   ### Descriptive Analysis
+
+   #### Columns values
+
+ The dataframe has 47818 rows. The 'amount' column ('Monto') has a mean of 8.318299e+07 CLP with a Standard Deviation value of 3.362285e+08. This high number suggests that there are important outliers in this column, that corresponde to the high-earner projects on one hand and projects with null or low amount earned on the other one.
+ 
+ The broadest category is 'Agencia', where a vast majority of entries correspond to the ANID agency (38263), then to CORFO agency (8908) and finally a small amount to Subsecretaría CTCI (647).
+
+ Every Agency has subagencies that depend of them. In this dataset the 'Subdireccion' column has 6 valid values and one invalid ('No Aplica'). The most repeated value was "Proyectos de Investigación" with 27654 projects (58% of the valid values group). 
+
+ With respect to the funding instruments, 398 differents instruments of funding were reported in this data. The two most repeated instruments were "FONDECYT REGULAR" (17143) and "FONDECYT INICIACION" (4337). The 'Concurso' column reports 1022 different values, with the first five top values corresponding to "Regular" contests, which makes it by far the most important category on this matter.
+
+ The 'Año' column shows the year that corresponds to each project. The top 13 values corresponds to the period between 2010 and 2022, which shows that the number of projects in the last decade was, on average, superior than before. It has to be said that from 2006 and onwards every year had at least 1000 projects, with a max value of 3092 financed projects in 2017.
+
+ The 'Awardees' category divided the projects according to their Economic Sector, Area of Knowledge, Type of Beneficiary and Region of Execution. In the case of the 'SectorEconomico' column, this column had 38910 null values, so this has to be taken into account in the analysis. Having said that, the most used 'SectorEconomico' was 'Multisectorial', with 922 values. With regard to the Area of Knowledge, the most used value was 'Ciencias Naturales' with 16086 values. The following category was 'Ciencias Sociales' with 6308, which is interesting since it's usually an underrepresented category in Science and Technology projects.
+
+ With respect to the Type of Beneficiaries, the majority of projects were presented by the 'Persona Natural' category with 30140 projects, followed by 'Persona Jurídica' with 8368 projects.
+
+ Finally, the 'RegionEjecucion' column shows that the vast majority of projects (26600) come from the Metropolitan Region of Santiago. The following two regions are Valparaíso (4981) and Biobío (4706).
+
+
+
+
