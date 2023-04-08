@@ -118,7 +118,7 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
  Every Agency has subagencies that depend of them. In this dataset the 'Subdireccion' column has 6 valid values and one invalid ('No Aplica'). The most repeated value was "Proyectos de Investigación" with 27654 projects (58% of the valid values group). 
 
- ![Bar plots of 'Agencia' y 'Subdirección' columns](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/clahu/Desktop/Programaci%C3%B3n/Proyectos%20Independientes/Science_and_Technology_State_Projects_Awarded_Chile/agencies_subagencies_barplot.png?version%3D1680986844732)
+ ![Bar plots of 'Agencia' y 'Subdirección' columns](./images/agencies_subagencies_barplot.png)
 
  With respect to the funding instruments, 398 differents instruments of funding were reported in this data. The two most repeated instruments were "FONDECYT REGULAR" (17143) and "FONDECYT INICIACION" (4337). The 'Concurso' column reports 1022 different values, with the first five top values corresponding to "Regular" contests, which makes it by far the most important category on this matter.
 
