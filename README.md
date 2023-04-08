@@ -128,11 +128,11 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
  The 'Awardees' category divided the projects according to their Economic Sector, Area of Knowledge, Type of Beneficiary and Region of Execution. In the case of the 'SectorEconomico' column, this column had 38910 null values, so this has to be taken into account in the analysis. Having said that, the most used 'SectorEconomico' was 'Multisectorial', with 922 values.
  
- ![Number of projects by 'SectorEconomico' bar plot](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/clahu/Desktop/Programaci%C3%B3n/Proyectos%20Independientes/Science_and_Technology_State_Projects_Awarded_Chile/es_barplot.png?version%3D1680986951594)
+ ![Number of projects by 'SectorEconomico' bar plot](./Images/es_barplot.png)
  
 With regard to the Area of Knowledge, the most used value was 'Ciencias Naturales' with 16086 values. The following category was 'Ciencias Sociales' with 6308, which is interesting since it's usually an underrepresented category in Science and Technology projects.
 
-![Number of projects by 'AreaConocimiento' bar plot](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/clahu/Desktop/Programaci%C3%B3n/Proyectos%20Independientes/Science_and_Technology_State_Projects_Awarded_Chile/aok_barplot.png?version%3D1680987050189)
+![Number of projects by 'AreaConocimiento' bar plot](./Images/aok_barplot.png)
 
  With respect to the Type of Beneficiaries, the majority of projects were presented by the 'Persona Natural' category with 30140 projects, followed by 'Persona Jurídica' with 8368 projects.
 
