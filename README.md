@@ -122,6 +122,8 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
  With respect to the funding instruments, 398 differents instruments of funding were reported in this data. The two most repeated instruments were "FONDECYT REGULAR" (17143) and "FONDECYT INICIACION" (4337). The 'Concurso' column reports 1022 different values, with the first five top values corresponding to "Regular" contests, which makes it by far the most important category on this matter.
 
+ ![Bar plots of 'Instrument' column](./Images/top15inst_barplot.png)
+
  The 'Año' column shows the year that corresponds to each project. The top 13 values corresponds to the period between 2010 and 2022, which shows that the number of projects in the last decade was, on average, superior than before. It has to be said that from 2006 and onwards every year had at least 1000 projects, with a max value of 3092 financed projects in 2017.
 
  ![Number of projects by 'Año' bar plot](./Images/year_barplot.png)
