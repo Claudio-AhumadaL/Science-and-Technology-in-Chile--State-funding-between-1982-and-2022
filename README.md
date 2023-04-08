@@ -145,7 +145,25 @@ The exploratory analysis of the general group of projects starts with a scatter 
 
 ![Amount granted by year scatter plot](./Images/amount_year_scatter.png)
 
-As it can be seen, the amount granted by projects started to stabilize between the 1E06 and 1E08 CLP amounts from around 1990 and onwards. As it was seen in the Number of projects by 'Año' bar plot, around 2017 there were some outliers in the form of high earner projects, that can be seen in this scatter plot too. It's interesting to note that the orders of magnitud of the amounts have been somewhat constant during the last 10 years, which is something that should be looked upon.
+As it can be seen, the amount granted by projects started to stabilize between the 1E06 and 1E08 CLP amounts from around 1990 and onwards. Around 2017 there were some outliers in the form of high earner projects. It's interesting to note that the orders of magnitude of the amounts have been somewhat constant during the last 10 years, which is something that should be looked upon.
+
+Next, a grouping-based exploratory analysis was performed over the columns listed in the Methods section, grouping each column by their distinct values and calculating the average amount granted to the projects that belong to each group. 
+
+The grouped table for the 'Agencia' columns showed that, on average, ANID projects granted an amount of 8.98E7 CLP, while CORFO and Subsecretaría CTCI had values of 5.85E7 and 4.58E7. This shows that on average these agencies grant approximately the same amount per project.
+
+The grouped table for the 'subsecretaría' column showed that the highest average amounts were granted by Centros e Investigación Asociativa (8.6E8 CLP) and Investigación Aplicada e Innovación (1.14E8 CLP). The minimum value corresponds to REC, with 4.02E7, about one order of magnitude less than the max.
+
+The grouped table for the 'instrumento' column had a massive difference between the group with the highest amount and the group with the lowest amount: CENTRO CIENTÍFICOS Y TECNOLÓGICOS DE EXCELENCIA (Financiamiento Basal) with 1.1E10 CLP and Concurso Clubes CAICE with 6E5 CLP. This makes sense, since instruments have a different scope. For example, some instruments (such as the max average amount instrument presented here) are directed to major centers of R+D, so the amounts given are of a higher order. Some other projects are directed toward persons that have projects with narrower scopes, so those amounts are lower. 
+
+The 'Type of Contest' column has only two different groups, 'Ley' and 'Subsidio'. Their average amounts show differences, with 'Ley' having an average amount of 2.97E6 and 'Subsidio' having an average amount of 8.5E7. This may be related with legal constraints regarding a Ley versus a Subsidio contest, as well as the specific instruments that correspond to each category. Further exploration needs to be performed to elucidate this.
+
+The analysis of the Year column's average amounts showed peaks in the average amount granted in the years 2001, 2007, 2009, 2019 and 2022. The max amount corresponded to the year 2007 with 1.46E8 CLP. It would be interesting to continue exploring what happened on these years that ramped up the average amount granted.
+
+The 'SectorEconomico' column had all its groups in the same order of magnitude. The highest average amount corresponded to the Vitivinicola group with 9.28E7 CLP and the lowest average amount corresponded to the Manufactura de Metales Básico group with 2.68E7 CLP.
+
+The 'AreaConocimiento' column had a range of average amounts ranging between Humanidad y Artes (4.47E7) and Multidisciplinario (2.18E8). It was expected that projects coming from Natural Sciences and Technology (as well as multidisciplinary projects) had higher average amounts than projects coming from the humanities. This result corresponded with said expectation.
+
+
 
 For the group of the TOP 20 highest-earner projects, the following bar plot presents that amount given to each of the projects in said category, ranging approximately between 8E9 CLP and 1.75E10 CLP.
 
