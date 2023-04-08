@@ -124,7 +124,7 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
  The 'Año' column shows the year that corresponds to each project. The top 13 values corresponds to the period between 2010 and 2022, which shows that the number of projects in the last decade was, on average, superior than before. It has to be said that from 2006 and onwards every year had at least 1000 projects, with a max value of 3092 financed projects in 2017.
 
- ![Number of projects by 'Año' bar plot](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/clahu/Desktop/Programaci%C3%B3n/Proyectos%20Independientes/Science_and_Technology_State_Projects_Awarded_Chile/year_barplot.png?version%3D1680986968667)
+ ![Number of projects by 'Año' bar plot](./Images/year_barplot.png)
 
  The 'Awardees' category divided the projects according to their Economic Sector, Area of Knowledge, Type of Beneficiary and Region of Execution. In the case of the 'SectorEconomico' column, this column had 38910 null values, so this has to be taken into account in the analysis. Having said that, the most used 'SectorEconomico' was 'Multisectorial', with 922 values.
  
@@ -138,11 +138,11 @@ With regard to the Area of Knowledge, the most used value was 'Ciencias Naturale
 
  Finally, the 'RegionEjecucion' column shows that the vast majority of projects (26600) come from the Metropolitan Region of Santiago. The following two regions are Valparaíso (4981) and Biobío (4706).
 
-![Number of projects by 'RegionEjecucion' bar plot](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/clahu/Desktop/Programaci%C3%B3n/Proyectos%20Independientes/Science_and_Technology_State_Projects_Awarded_Chile/awproj_region_barplot.png?version%3D1680986947058)
+![Number of projects by 'RegionEjecucion' bar plot](./Images/awproj_region_barplot.png)
 
 For the group of the TOP 20 highest-earner projects, the following bar plot presents that amount given to each of the projects in said category, ranging approximately between 8E9 CLP and 1.75E10 CLP.
 
-![Amount and code of project bar plot for Top 20 highest earner projects](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/clahu/Desktop/Programaci%C3%B3n/Proyectos%20Independientes/Science_and_Technology_State_Projects_Awarded_Chile/amount_code_top20earners_barplot.png?version%3D1680987229690)
+![Amount and code of project bar plot for Top 20 highest earner projects](./Images/amount_code_top20earners_barplot.png)
  
 ### Exploratory Analysis
 
