@@ -70,7 +70,6 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
  3. Descriptive analysis
     - Bar Plot: Number of projects by State Agencies, Sub-agencies, Area of Knowledge, Economic Sector, Instrument, RegionEjecucion.
-    - Bar plot: Amount by code of project for Top 20 high-earner projects.
  
   ### Exploratory analysis
 
@@ -109,7 +108,7 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
    ### Descriptive Analysis
 
-   #### Descriptive analysis and explorative visualizations
+   #### Initial visualizations
 
  The dataframe has 47818 rows. The 'amount' column ('Monto') has a mean of 8.318299e+07 CLP with a Standard Deviation value of 3.362285e+08. This high number suggests that there are important outliers in this column, that corresponde to the high-earner projects on one hand and projects with null or low amount earned on the other one.
 
@@ -139,11 +138,17 @@ With regard to the Area of Knowledge, the most used value was 'Ciencias Naturale
  Finally, the 'RegionEjecucion' column shows that the vast majority of projects (26600) come from the Metropolitan Region of Santiago. The following two regions are Valparaíso (4981) and Biobío (4706).
 
 ![Number of projects by 'RegionEjecucion' bar plot](./Images/awproj_region_barplot.png)
+ 
+### Exploratory Analysis
+
+The exploratory analysis of the general group of projects starts with a scatter plot of the amount granted (using a logarithmic scale) to each project by the year of execution of the project.
+
+![Amount granted by year scatter plot](./Images/amount_year_scatter.png)
+
+As it can be seen, the amount granted by projects started to stabilize between the 1E06 and 1E08 CLP amounts from around 1990 and onwards. As it was seen in the Number of projects by 'Año' bar plot, around 2017 there were some outliers in the form of high earner projects, that can be seen in this scatter plot too. It's interesting to note that the orders of magnitud of the amounts have been somewhat constant during the last 10 years, which is something that should be looked upon.
 
 For the group of the TOP 20 highest-earner projects, the following bar plot presents that amount given to each of the projects in said category, ranging approximately between 8E9 CLP and 1.75E10 CLP.
 
 ![Amount and code of project bar plot for Top 20 highest earner projects](./Images/amount_code_top20earners_barplot.png)
- 
-### Exploratory Analysis
 
 
