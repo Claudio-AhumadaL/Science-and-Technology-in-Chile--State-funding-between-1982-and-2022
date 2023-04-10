@@ -189,8 +189,35 @@ The region with most high earner projects was, unsurprisingly, the Metropolitan 
 
 With respecto to the 'AreaConocimiento' column, the group was somewhat evenly distributed by Ciencias Naturales (7 projects), 'Ingeniería y Tecnología' (6 projects) and 'Multidisciplinario' (6 projects). There was only 1 project from 'Ciencias Sociales' in this group, which is consistent with the lower amounts that this group historically has gotten from the State funding-wise. 
 
-The Ciencias Sociales group is reported as the group with the highest amount (1.35E10 CLP), but this is influenced by its number of values. The lowest average amount corresponded to the Multidisciplinario group, woth 9.6E9.
+The Ciencias Sociales group is reported as the group with the highest amount (1.35E10 CLP), but this is influenced by its number of values. The lowest average amount corresponded to the Multidisciplinario group, with 9.6E9.
 
 The 'EconomicSector' column of this group was empty, and both the 'Type of Contest' and 'Type of Beneficiary' columns have only one value. This information is summarized in the following table:
 
 ![Summary Table of Max and Min values and elements from the grouped categories by amount tables (TOP20 earners)](./Images/summary_table_top20.png)
+
+
+### Projects from the last 5 years
+
+The 'Agencia' group of the subset of projects where `'year' > 2017` and `'monto' > 0` has a maximum average value corresponding to the ANID group (1.35E8 CLP) and a minimum average value corresponding to the group 'Corfo' (4.89E7 CLP).
+
+The 'subagencia' column has a maximum average value corresponding to the 'Centros e Investigación Asociativa' group (9.22E8 CLP) and a minimum average value corresponding to the 'Innovación' group (4.89E7 CLP)
+
+The maximum average value of the 'Instrument' column corresponds to the 'INSTITUTOS MILENIO' group (8.4E9) with the minimum average value corresponding to the 'VIU' group, which as a fixed amount of 2.000.000 CLP.
+
+Regarding the 'Type of Contest' column, the 'Ley' group has the maximum average value (2.54E8 CLP) while the 'Subsidio' group has the minimum average value (1.13E8 CLP).
+
+The maximum average per year showed that the group with the highest average is the year 2021 (1.51E8 CLP) and the group with the lowest average is the year 2020 (1.00E8 CLP). The similarity of these values show that the average per year has been similar the last 5 years.
+
+For the 'EconomicSector' column, the maximium average value corresponds to the 'Energético' sector (8.74E7 CLP) and the minimum average value corresponds to the 'Manufactura de metales básicos' group (1.67E7) CLP.
+
+The 'AreaConocimiento' column shows that the maximum average amount comes from the 'Multidisciplinario' group (2.4E8 CLP). The minimum average amount comes from the 'Humanidades y Artes' group (7.46E7 CLP).
+
+The 'Type of Beneficiary' column shows the same behaviour that in the general group, with the maximum average amount coming from the 'Persona Jurídica' group (1.93E8 CLP) and the minimum average amount coming from the 'Otra' group (1.98E7 CLP).
+
+Lastly, the 'RegionEjecucion' column has its maximum average amount corresponding to the 'Multiregional' group (2.03E8 CLP) and its minimum average amount corresponding to the Ñuble Region (3.79E7).
+
+This information is summarized in the following table:
+
+![Summary Table of Max and Min values and elements from the grouped categories by amount tables (Last 5 years)](./Images/summary_table_l5y.png)
+
+
