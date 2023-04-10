@@ -4,17 +4,17 @@ Data analysis and visualization of Science and Technology projects that were giv
 
 @Claudio-AhumadaL, 2023
 
- ## General Information
+## General Information
 
-The aim of this project is to run an analysis over the Science and Technology funding awarded by the Chilean State between the years 1982 to 2022. I expect to run descriptive and exploratory analysis over the data, which was collected from the [OBSERVA](observa.minciencia.gob.cl) platform of the chilean Ministry of Science. I expect to condense my findings in a dashboard made using Tableau for proper visualization.
+The aim of this project is to run an analysis over the Science and Technology funding awarded by the Chilean State between the years 1982 to 2022. I expect to run descriptive and exploratory analysis over the data, which was collected from the [OBSERVA](observa.minciencia.gob.cl) platform of the Chilean Ministry of Science. I expect to condense my findings in a dashboard made using Tableau for proper visualization.
 
- ## Scope
+### Scope
 
- This project is an exploratory endeavor with the global objective of understanding the route that has been taken by the chilean Ministry of Science to award funding to projects over the last 40 years. This analysis will serve to showcase the importance given by this State to different techonological and scientific areas, considering that this funding is one of the main sources of economic intake for science and techonology in this country.
+ This project is an exploratory endeavor with the global objective of understanding the route that has been taken by the Chilean Ministry of Science to award funding to projects over the last 40 years. This analysis will serve to showcase the importance given by this State to different technological and scientific areas, considering that this funding is one of the main sources of economic intake for science and techonology in this country.
 
-  ### Goals
+### Goals
 
-The main goal of this project is to get a clear overview of the direction that the chilean State's Ministry of Science has taken during the 40 year period available in the data (1982 to 2022). I expect to analyze categories such as Area of Knowledge, Type of Funding, Amounts and Region of Execution of the projects, as well as the relationship between these categories. This project will be considered succesful after performing descriptive and exploratory analysis over the data and then producing an interactive and informative dashboard to showcase the findings.
+The main goal of this project is to get a clear overview of the direction that the chilean State's Ministry of Science has taken during the 40 year period available in the data (1982 to 2022). I expect to analyze categories such as Area of Knowledge, Type of Funding, Amounts and Region of Execution of the projects, as well as the relationship between these categories. This project will be considered successful after performing descriptive and exploratory analysis over the data and then producing an interactive and informative dashboard to showcase the findings.
 
 Some questions I want to answer with this report are:
 
@@ -22,24 +22,24 @@ Some questions I want to answer with this report are:
     - How have funding priorities shifted over time? 
     - Are there any areas that have consistently received more funding than others?
 
-  ### Actions
+### Actions
 
 This project could provide insights to interested groups, such as consulting companies or think thanks, that are interested in getting to know how the Chilean State has been assigning funding over the last 40 years for scientific and technological enterprises. It could also help the interested groups to evaluate if the funding has been aligned with the State's areas of interest (macroeconomically speaking), so they can counsel against or in favor of shifting the funding towards one or another area of interest. 
 
 ## Data
 
-This project relies on data of the projects awarded through public support instruments for science, technology, knowledge and innovation, executed by the State agencies ANID, CORFO and the CTCI Undersecretariat. This data was taken from the [OBSERVA](observa.minciencia.gob.cl) platform of the chilean Ministry of Science and covers the period between 1982 and 2022.
+This project relies on data of the projects awarded through public support instruments for science, technology, knowledge and innovation, executed by the State agencies ANID, CORFO and the CTCI Undersecretariat. This data was taken from the [OBSERVA](observa.minciencia.gob.cl) platform of the Chilean Ministry of Science and covers the period between 1982 and 2022.
 
 The data included 47818 projects with a total amount given of 3.849.542.375.552 CLP. Not all projects have a full set of information, with 8908 NaN values in the 'Concurso', 'TipoBeneficiario' and the 'AreaConocimiento' columns, '38932' in the 'Objetivo' column, '249' in the 'Institución' column, '38910' in the SectorEconomico column and '1540' in the 'Monto' column.
 
 It's important to note for the 'RegionEjecucion' column analysis that the regions of Arica y Parinacota and Los Ríos were created in 2007 while the Ñuble region was created in 2018, which can introduce bias in said analysis.
 
 
-## Analysis
+## Methods
 
   ### Initial definitions
 
-The data will be cleaned and inspected using the python library Pandas. Statistical analysis will rely on the python libraries NumPy and SciPy. Exploratory visualization will be performed using the python library MatplotLib. The final dashboard will be constructed using Tableau Public.
+The data will be cleaned and inspected using the python library Pandas. Statistical analysis will rely on the python libraries NumPy and SciPy. Exploratory visualization will be performed using the python library Matplotlib. The final dashboard will be constructed using Tableau Public.
 
 This dataframe (called sf_data) has 2 types of columns, namely:
 
@@ -110,32 +110,31 @@ Later on the analysis, the dataframe was filtered to only get values for the las
 
    #### Initial visualizations
 
- The dataframe has 47818 rows. The 'amount' column ('Monto') has a mean of 8.318299e+07 CLP with a Standard Deviation value of 3.362285e+08. This high number suggests that there are important outliers in this column, that corresponde to the high-earner projects on one hand and projects with null or low amount earned on the other one.
+ The dataframe has 47,818 rows. The 'amount' column ('Monto') has a mean of 8.318299e+07 CLP with a standard deviation of 3.362285e+08. This high number suggests that there are important outliers in this column, which correspond to high-earner projects on one hand and projects with null or low amounts earned on the other.
 
- 
- The broadest category is 'Agencia', where a vast majority of entries correspond to the ANID agency (38263), then to CORFO agency (8908) and finally a small amount to Subsecretaría CTCI (647).
+The broadest category is 'Agencia,' where the vast majority of entries correspond to the ANID agency (38,263), followed by the CORFO agency (8,908), and finally a small number to Subsecretaría CTCI (647).
 
- Every Agency has subagencies that depend of them. In this dataset the 'Subdireccion' column has 6 valid values and one invalid ('No Aplica'). The most repeated value was "Proyectos de Investigación" with 27654 projects (58% of the valid values group). 
+Every agency has subagencies that depend on them. In this dataset, the 'Subdirección' column has six valid values and one invalid ('No Aplica'). The most repeated value was "Proyectos de Investigación" with 27,654 projects (58% of the valid values group).
 
  ![Bar plots of 'Agencia' y 'Subdirección' columns](./Images/agencies_subagencies_barplot.png)
 
- With respect to the funding instruments, 398 differents instruments of funding were reported in this data. The two most repeated instruments were "FONDECYT REGULAR" (17143) and "FONDECYT INICIACION" (4337). The 'Concurso' column reports 1022 different values, with the first five top values corresponding to "Regular" contests, which makes it by far the most important category on this matter.
+ With respect to the funding instruments, 398 different instruments of funding were reported in this dataset. The two most repeated instruments were "FONDECYT REGULAR" (17,143) and "FONDECYT INICIACION" (4,337). The 'Concurso' column reports 1,022 different values, with the top five values corresponding to "Regular" contests, making it by far the most important category in this matter.
 
  ![Bar plots of 'Instrument' column](./Images/top15inst_barplot.png)
 
- The 'Año' column shows the year that corresponds to each project. The top 13 values corresponds to the period between 2010 and 2022, which shows that the number of projects in the last decade was, on average, superior than before. It has to be said that from 2006 and onwards every year had at least 1000 projects, with a max value of 3092 financed projects in 2017.
+ The 'Año' column shows the year that corresponds to each project. The top 13 values correspond to the period between 2010 and 2022, showing that the number of projects in the last decade was, on average, superior to before. It has to be said that from 2006 onwards, every year had at least 1,000 projects, with a maximum value of 3,092 financed projects in 2017.
 
  ![Number of projects by 'Año' bar plot](./Images/year_barplot.png)
 
- The 'Awardees' category divided the projects according to their Economic Sector, Area of Knowledge, Type of Beneficiary and Region of Execution. In the case of the 'SectorEconomico' column, this column had 38910 null values, so this has to be taken into account in the analysis. Having said that, the most used 'SectorEconomico' was 'Multisectorial', with 922 values.
- 
-With regard to the Area of Knowledge, the most used value was 'Ciencias Naturales' with 16086 values. The following category was 'Ciencias Sociales' with 6308, which is interesting since it's usually an underrepresented category in Science and Technology projects.
+ The 'Awardees' category divided the projects according to their Economic Sector, Area of Knowledge, Type of Beneficiary, and Region of Execution. In the case of the 'SectorEconomico' column, this column had 38,910 null values, so this has to be taken into account in the analysis. Having said that, the most used 'SectorEconomico' was 'Multisectorial,' with 922 values.
+
+With regard to the Area of Knowledge, the most used value was 'Ciencias Naturales' with 16,086 values. The following category was 'Ciencias Sociales' with 6,308, which is interesting since it's usually an underrepresented category in Science and Technology projects.
 
 ![Number of projects by 'AreaConocimiento' bar plot](./Images/aok_barplot.png)
 
- With respect to the Type of Beneficiaries, the majority of projects were presented by the 'Persona Natural' category with 30140 projects, followed by 'Persona Jurídica' with 8368 projects.
+With respect to the Type of Beneficiaries, the majority of projects were presented by the 'Persona Natural' category with 30,140 projects, followed by 'Persona Jurídica' with 8,368 projects.
 
- Finally, the 'RegionEjecucion' column shows that the vast majority of projects (26600) come from the Metropolitan Region of Santiago. The following two regions are Valparaíso (4981) and Biobío (4706).
+Finally, the 'RegionEjecucion' column shows that the vast majority of projects (26,600) come from the Metropolitan Region of Santiago. The following two regions are Valparaíso (4,981) and Biobío (4,706).
 
 ![Number of projects by 'RegionEjecucion' bar plot](./Images/awproj_region_barplot.png)
  
@@ -143,7 +142,9 @@ With regard to the Area of Knowledge, the most used value was 'Ciencias Naturale
 
 #### General Group
 
-The exploratory analysis of the general group of projects starts with a scatter plot of the amount granted (using a logarithmic scale) to each project by the year of execution of the project.
+The exploratory analysis of the general group of projects shows interesting findings.
+
+It starts with a scatter plot of the amount granted (using a logarithmic scale) to each project by the year of execution of the project.
 
 ![Amount granted by year scatter plot](./Images/amount_year_scatter.png)
 
@@ -196,7 +197,7 @@ The 'EconomicSector' column of this group was empty, and both the 'Type of Conte
 ![Summary Table of Max and Min values and elements from the grouped categories by amount tables (TOP20 earners)](./Images/summary_table_top20.png)
 
 
-### Projects from the last 5 years
+#### Projects from the last 5 years
 
 The 'Agencia' group of the subset of projects where `'year' > 2017` and `'monto' > 0` has a maximum average value corresponding to the ANID group (1.35E8 CLP) and a minimum average value corresponding to the group 'Corfo' (4.89E7 CLP).
 
@@ -220,4 +221,68 @@ This information is summarized in the following table:
 
 ![Summary Table of Max and Min values and elements from the grouped categories by amount tables (Last 5 years)](./Images/summary_table_l5y.png)
 
+### Statistical Analysis
 
+#### Normal distribution evaluation for 'Monto' and 'Year' columns.
+
+To check if the 'Monto' column has a normal distribution, an Anderson-Darling test was performed. The resulting statistic was of 10997.31 with critical values of [0.576, 0.656, 0.787,  0.918, 1.092]. Since the statistic is higher that every critical value, we can assure that this data is not normally distributed.
+
+The same test was applied over the 'Year' column. The statistic was of 1608.71, while the critical values were 
+[0.576, 0.656, 0.787, 0.918, 1.092]. This column is not normally distributed.
+
+#### Homoscedasticity evaluation of 'SectorEconomico', 'AreaConocimiento' and 'RegionEjecucion' versus 'Monto'.
+
+To evaluate for Homoscedasticity, a Levene's test was performed over the name columns and the 'Monto' column.
+
+For 'SectorEconomico' the Levene's test statistic was of 2.9678, which is relatively small. The p-value obtained was 2.5058e-07, which is much smaller than the commonly used significance level of 0.05. This suggests strong evidence against the null hypothesis of equal variances across groups.
+
+For 'AreaConocimiento', the Levene's test statistic is 33.3, which is somewhat high. Nonetheless, the p-value is 2.5058e-40, which is much smaller than the commonly used significance level of 0.05. This suggests strong evidence against the null hypothesis of equal variances across groups.
+
+For 'RegionEjecucion', the Levene's test statistic is 2.13, which is small. The p-value was of 0.003, which is smaller than the commonly used significance level of 0.05. This suggests evidence against the null hypothesis of equal variances across groups.
+
+As seen, none of these columns shows homoscedasticity when compared to the 'Monto' column. This, coupled with the non-normal distribution of the 'Monto' column, shows that to evaluate differences between these groups a non-parametric test should be used.
+
+#### Kruskal-Wallis and Dunn's test for 'SectorEconomico'.
+
+The Kruskal-Wallis test performed over this column's groups relative to their 'Monto' medians gave an statistic of 655.8 and a p-value of 1.33e-54, which is considerably smaller than the significance level of 0.05. Thus, it can be concluded that there is a statistically significant difference between the amount given to it's groups.
+
+Since this column has 29 different valid groups, a correction had to be implemented alongside the Dunn's test. This would ensure that the results of the Dunn's test, which shows which groups have differences among their 'Monto' values, are statistically significant. 
+
+For this group, the correction used was the Benjamini-Hochberg procedure, which is not as conservative as other corrections, so it controls the overall false negative rate better. The resulting matrix was processed using a Heatmap, giving the following results:
+
+![Heatmap of Dunn's Test results over the 'EconomicSector' column](./Images/es_heatmap.png)
+
+#### Kruskal-Wallis and Dunn's test for 'AreaConocimiento'.
+
+The Kruskal-Wallis test performed over this column's groups relative to their 'Monto' medians gave an statistic of 533.2 and a p-value of 5.91e-112, which is considerably smaller than the significance level of 0.05. Thus, it can be concluded that there is a statistically significant difference between the amount given to it's groups.
+
+Since this column has 7 different valid groups, a correction had to be implemented alongside the Dunn's test. This would ensure that the results of the Dunn's test, which shows which groups have differences among their 'Monto' values, are statistically significant. 
+
+For this group, the correction used was the Bonferroni correction, which is more conservative so it controls the overall false positive rate better. The resulting matrix was processed using a Heatmap, giving the following results:
+
+![Heatmap of Dunn's Test results over the 'EconomicSector' column](./Images/aok_heatmap.png)
+
+#### Kruskal-Wallis and Dunn's test for 'RegionEjecucion'.
+
+The Kruskal-Wallis test performed over this column's groups relative to their 'Monto' medians gave an statistic of 29911 and a p-value of 1.71e-53, which is considerably smaller than the significance level of 0.05. Thus, it can be concluded that there is a statistically significant difference between the amount given to it's groups.
+
+Since this column has 13 different valid groups, a correction had to be implemented alongside the Dunn's test. This would ensure that the results of the Dunn's test, which shows which groups have differences among their 'Monto' values, are statistically significant. 
+
+For this group, the correction used was the Bonferroni correction, which is more conservative so it controls the overall false positive rate better. The resulting matrix was processed using a Heatmap, giving the following results:
+
+![Heatmap of Dunn's Test results over the 'RegionEjecucion' column](./Images/region_dunn_heatmap.png)
+
+
+## Conclusions
+
+Overall, the report provides insight into the trends of funding for scientific and technological areas over the past 40 years in Chile. The conclusions drawn from the analysis of the data can be summarized as follows:
+
+1. The trends in funding for different scientific and technological areas over the past 40 years are inclined toward Biological Sciences and Technology. Social sciences and Humanities and Arts have 8770 projects combined, while the rest (excluding Multidisciplinary projects and projects that didn't inform an Area of Knowledge) have a project count of 28683 projects.
+2. Over the whole period, Ciencias Naturales has been the group with more projects. From 2013 and onwards Ciencias Sociales had surpassed Ingeniería y Tecnología for the second place, but this trend shifted again between 2020 and 2021.
+3. The average amount given to each of these Areas of Knowledge suffered different changes over the years. Until 2019-2020, Ciencias Agrícolas y Veterinarias had the highest average amount, but in that period was surpassed by Ciencias Naturales, Ciencias Médicas and Ingeniería y Tencología. The Multidisciplinary group shows the most variability, having peaks of average amounts between 2012 and 2015 and again in 2018. It's average amount descended in 2021. It has to be said that the average amount of the Ciencias Naturales and the Ciencias Agrícolas y Veterinarias have been slightly higher than the rest of the groups (excluding Multidisciplinary). It's interesting to note that the highest peak in Ingeniería y Tecnología happened in 2009, where it was higher than the rest of groups' averages. Nevertheless, the more notorious evidence of preference over these projects is prominently noted at the number of projects levels more than the average amount given.
+4. In the case of the median amount of these groups, the last 2 years Ciencias Naturales and Ciencias Agrícolas y Veterinarias have peaked, surpassing the Multidisciplinary group, which median amount had growed to the top in 2018. Ciencias Naturales and Ciencias Agrícolas y Veterinarias have gotten consistently higher median amounts practically over all this period when Multidisciplinary is excluded from the analysis.
+5. The region with the highest amount of projects is, by far, the Metropolitan Region of Santiago with 26600 projects over all this period. The following regions are Valparaíso Region and the Biobío Regions with 4981 and 4706 projects respectively. This seems like the area with the highest practical differences and the most problematic consequences funding-wise. 
+6. Regarding economic sectors, this column has a high number of null values, so the conclusions extracted from its analysis has to take this into account. That said, the Economic Sector with the highest average amount is the Vitivinícola sector while the sector with the lowest average amount is the Manufactura de Metales Básicos sector. It's interesting to note that the Multisectorial economic sector has a high average amount (67274804 CLP), ranking 5th in descending order.
+7. With respect to the instruments that gave funding over these years, the top 3 instruments were Fondecyt Iniciación, Fondecyt Postdoctorado and Incentivo a la Cooperación Internacional. This trends change when filtering for only the projects from the last 5 years, where the most projects come from Fondecyt Regular, Fondecyt Iniciación and Fondecyt Postdoctorado, in that order.
+
+Overall, the report highlights the preferences in funding for different scientific and technological areas, the uneven distribution of funding across different regions of Chile, and the importance of considering both the number of projects funded and the average/median amounts given when analyzing funding trends. However, the conclusions drawn from the analysis should be taken with caution, particularly when it comes to the analysis of economic sectors, which has a high number of null values.
