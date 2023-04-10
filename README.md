@@ -260,7 +260,7 @@ Since this column has 7 different valid groups, a correction had to be implement
 
 For this group, the correction used was the Bonferroni correction, which is more conservative so it controls the overall false positive rate better. The resulting matrix was processed using a Heatmap, giving the following results:
 
-![Heatmap of Dunn's Test results over the 'EconomicSector' column](./Images/aok_heatmap.png)
+![Heatmap of Dunn's Test results over the 'AreaConocimiento' column](./Images/aok_dunn_heatmap.png)
 
 #### Kruskal-Wallis and Dunn's test for 'RegionEjecucion'.
 
