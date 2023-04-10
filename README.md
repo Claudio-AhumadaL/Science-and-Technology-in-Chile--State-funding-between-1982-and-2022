@@ -54,7 +54,7 @@ Restricting to consider only the columns of interest, the numerical category has
 
 The rest of the columns are not included in the analysis.
 
-Later on the analysis, the dataframe was filtered to only get values for the last 5 years ('Año' > 2017) and then to only get the high_earner_projects (sf_data.sort_values(by=['Monto'], ascending = False).head(20)). Further analysis was performed over both of these subsets.
+Later on the analysis, the dataframe was filtered to only get values for the last 5 years ('Año' > 2017) and then to only get the high earner projects (sf_data.sort_values(by=['Monto'], ascending = False).head(20)). Further analysis was performed over both of these subsets.
 
   ### Descriptive analysis
 
@@ -141,6 +141,8 @@ With regard to the Area of Knowledge, the most used value was 'Ciencias Naturale
  
 ### Exploratory Analysis
 
+#### General Group
+
 The exploratory analysis of the general group of projects starts with a scatter plot of the amount granted (using a logarithmic scale) to each project by the year of execution of the project.
 
 ![Amount granted by year scatter plot](./Images/amount_year_scatter.png)
@@ -163,10 +165,32 @@ The 'SectorEconomico' column had all its groups in the same order of magnitude. 
 
 The 'AreaConocimiento' column had a range of average amounts ranging between Humanidad y Artes (4.47E7) and Multidisciplinario (2.18E8). It was expected that projects coming from Natural Sciences and Technology (as well as multidisciplinary projects) had higher average amounts than projects coming from the humanities. This result corresponded with said expectation.
 
+Regarding the 'TipoBeneficiario' column, the highest average amount corresponded to the 'Persona Juridica' group, with 1.65E8 CLP, while the lowest average amount corresponded to the category 'Otro' (2.15E7 CLP). Sadly, there is not enough information provided to elucidate what this category stands for. 
 
+The 'RegionEjecucion' column has a higher average amount coming from the 'Multiregional' group (2.03E8 CLP), and a lower average amount coming from the 'Extranjero' group (6909239.11 CLP).
 
-For the group of the TOP 20 highest-earner projects, the following bar plot presents that amount given to each of the projects in said category, ranging approximately between 8E9 CLP and 1.75E10 CLP.
+This information is summarized in the following table:
+
+![Summary Table of Max and Min values and elements from the grouped categories by amount tables (General group)](./Images/summary_table_general.png)
+
+#### High earner projects
+
+For the group of the TOP 20 highest-earner projects, the following bar plot presents the amount given to each of the projects in said category, ranging approximately between 8.8E9 CLP and 1.75E10 CLP.
 
 ![Amount and code of project bar plot for Top 20 highest earner projects](./Images/amount_code_top20earners_barplot.png)
 
+The projects of this group came from the years 2007 (5 projects), 2009 (4 projects), 2014 (4 projects), 2012 (4 projects), 2021 (2 projects) and  2010 (1 project). The highest average amount came from the year 2007 and had an amount of 1.33e10 CLP, while the project that had the minimum average amount came from the year 2012, with an amount of 8.93E9 CLP.
 
+Regarding the 'Instrumento' column, 13 projects came from the insturment 'CENTROS CIENTIFICOS Y TECNOLOGICOS DE EXCELENCIA (FINANCIAMIENTO BASAL)', with 2 more coming from 'FINANCIAMENTO BASAL', which is a similar instrument, so 75% of the top 20 high earner projects. This makes sense, since this instrument is directed toward Universities or Scientific Centres so the amount that they give is superior. The other 5 projects of this group had an instrument of 'CENTROS DE INVESTIGACIÓN EN AREAS PRIORITARIAS', which has the same scope.
+
+The highest average amount in this column was of 1.13E10 CLP, corresponding to the 'CENTROS CIENTIFICOS Y TECNOLOGICOS DE EXCELENCIA (FINANCIAMIENTO BASAL)' group, while the minimum amount was of 8.93E9 CLP and came from Centros e Investigación Asociativa.
+
+The region with most high earner projects was, unsurprisingly, the Metropolitan Region of Santiago, with 15 projects. The highest average came from Los Ríos Region (which has only 1 project in this table), with 1.75E10 CLP. The lowest average amount came from the Region del BioBío group, with 8.97E9 CLP.
+
+With respecto to the 'AreaConocimiento' column, the group was somewhat evenly distributed by Ciencias Naturales (7 projects), 'Ingeniería y Tecnología' (6 projects) and 'Multidisciplinario' (6 projects). There was only 1 project from 'Ciencias Sociales' in this group, which is consistent with the lower amounts that this group historically has gotten from the State funding-wise. 
+
+The Ciencias Sociales group is reported as the group with the highest amount (1.35E10 CLP), but this is influenced by its number of values. The lowest average amount corresponded to the Multidisciplinario group, woth 9.6E9.
+
+The 'EconomicSector' column of this group was empty, and both the 'Type of Contest' and 'Type of Beneficiary' columns have only one value. This information is summarized in the following table:
+
+![Summary Table of Max and Min values and elements from the grouped categories by amount tables (TOP20 earners)](./Images/summary_table_top20.png)
